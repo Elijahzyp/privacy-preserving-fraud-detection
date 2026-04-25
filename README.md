@@ -4,6 +4,17 @@
 
 A prototype system for fraud detection on financial transactions that supports **encrypted inference** using the CKKS homomorphic encryption scheme (via [TenSEAL](https://github.com/OpenMined/TenSEAL)). Built on the [PaySim](https://www.kaggle.com/datasets/ealaxi/paysim1) synthetic financial dataset.
 
+## Live Demo
+
+A working demo is hosted on Hugging Face Spaces:
+
+| Component | Stack | URL |
+|---|---|---|
+| Frontend | Flask | [huggingface.co/spaces/baktistr/he-fraud-frontend](https://huggingface.co/spaces/baktistr/he-fraud-frontend) |
+| Backend | FastAPI | [huggingface.co/spaces/baktistr/he-fraud-backend](https://huggingface.co/spaces/baktistr/he-fraud-backend) |
+
+The frontend submits transaction features to the FastAPI backend, which loads the artifacts from this repo and returns both plaintext and CKKS-encrypted inference results.
+
 ## Overview
 
 This project demonstrates that linear and low-degree polynomial models trained on engineered features can achieve strong fraud detection performance (F1 ≈ 0.88) while remaining fully compatible with homomorphic encryption — allowing inference on **encrypted data without ever decrypting it**.
@@ -20,17 +31,6 @@ This project demonstrates that linear and low-degree polynomial models trained o
 | Ridge (α=0.01) | Yes | 0.3140 | 0.7335 |
 
 `poly2_logreg_tuned` is the recommended model: best HE-compatible F1, and fast enough for interactive encrypted inference.
-
-### Live Demo
-
-A working demo is hosted on Hugging Face Spaces:
-
-| Component | Stack | URL |
-|---|---|---|
-| Frontend | Flask | [huggingface.co/spaces/baktistr/he-fraud-frontend](https://huggingface.co/spaces/baktistr/he-fraud-frontend) |
-| Backend | FastAPI | [huggingface.co/spaces/baktistr/be-fraud-frontend](https://huggingface.co/spaces/baktistr/be-fraud-frontend) |
-
-The frontend submits transaction features to the FastAPI backend, which loads the artifacts from this repo and returns both plaintext and CKKS-encrypted inference results.
 
 ### Sample Figures
 
