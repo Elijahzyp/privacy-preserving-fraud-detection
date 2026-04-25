@@ -1,5 +1,7 @@
 # Privacy-Preserving Fraud Detection with Homomorphic Encryption
 
+> Course project for **Engineering Privacy in Software** (17-735 / 19-605 / 95-878) — Carnegie Mellon University, Spring 2026.
+
 A prototype system for fraud detection on financial transactions that supports **encrypted inference** using the CKKS homomorphic encryption scheme (via [TenSEAL](https://github.com/OpenMined/TenSEAL)). Built on the [PaySim](https://www.kaggle.com/datasets/ealaxi/paysim1) synthetic financial dataset.
 
 ## Overview
