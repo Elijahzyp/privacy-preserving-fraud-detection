@@ -19,6 +19,7 @@ __pycache__/
 # Anaconda project internals
 anaconda_projects/
 
+# Claude
 .claude/
 CLAUDE.md
 
