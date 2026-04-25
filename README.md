@@ -21,6 +21,17 @@ This project demonstrates that linear and low-degree polynomial models trained o
 
 `poly2_logreg_tuned` is the recommended model: best HE-compatible F1, and fast enough for interactive encrypted inference.
 
+### Live Demo
+
+A working demo is hosted on Hugging Face Spaces:
+
+| Component | Stack | URL |
+|---|---|---|
+| Frontend | Flask | [huggingface.co/spaces/baktistr/he-fraud-frontend](https://huggingface.co/spaces/baktistr/he-fraud-frontend) |
+| Backend | FastAPI | [huggingface.co/spaces/baktistr/be-fraud-frontend](https://huggingface.co/spaces/baktistr/be-fraud-frontend) |
+
+The frontend submits transaction features to the FastAPI backend, which loads the artifacts from this repo and returns both plaintext and CKKS-encrypted inference results.
+
 ### Sample Figures
 
 <table>

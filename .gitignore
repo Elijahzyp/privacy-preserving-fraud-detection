@@ -21,6 +21,7 @@ anaconda_projects/
 
 # Claude Code internals
 .claude/
+CLAUDE.md
 
 # Virtual environments
 .venv/
