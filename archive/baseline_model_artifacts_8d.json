@@ -1,0 +1,153 @@
+{
+  "feature_order": {
+    "feature_columns": [
+      "amount_scaled",
+      "oldbalanceOrg_scaled",
+      "oldbalanceDest_scaled",
+      "deltaOrig_scaled",
+      "deltaDest_scaled",
+      "is_cash_out",
+      "is_transfer",
+      "dest_is_merchant"
+    ],
+    "numeric_base_features": [
+      "amount",
+      "oldbalanceOrg",
+      "oldbalanceDest",
+      "deltaOrig",
+      "deltaDest"
+    ],
+    "binary_features": [
+      "is_cash_out",
+      "is_transfer",
+      "dest_is_merchant"
+    ]
+  },
+  "scaler": {
+    "mean": [
+      414282.18408607936,
+      186106.83227872496,
+      1595533.3992171604,
+      155318.45375811664,
+      378410.30043091776
+    ],
+    "scale": [
+      1127808.680090091,
+      1164565.899476024,
+      4161837.9741868647,
+      823703.3589339212,
+      1252288.0144750748
+    ]
+  },
+  "ridge_score": {
+    "weights": [
+      -0.10622641028863113,
+      -0.08436872054451129,
+      -0.021339708632152923,
+      0.4123481715596758,
+      0.011710643784570833,
+      -0.13888817436041084,
+      0.1388881743591924,
+      0.0
+    ],
+    "bias": -0.7400993985157942
+  },
+  "logistic_regression": {
+    "weights": [
+      -6.010083992827091,
+      -2.9023101684129253,
+      -0.523432254346832,
+      19.657526123813454,
+      -9.153379350425553,
+      -2.06806080745894,
+      -0.34945933713278016,
+      0.0
+    ],
+    "bias": -2.7909869983854634,
+    "optimizer_success": true,
+    "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+  },
+  "sample_summary": {
+    "rows": 89998,
+    "fraud": 8213,
+    "non_fraud": 81785,
+    "types": {
+      "CASH_OUT": 70088,
+      "TRANSFER": 19910
+    }
+  },
+  "metrics": [
+    {
+      "model": "ridge_score_val",
+      "precision": 1.0,
+      "recall": 0.1963470319634703,
+      "f1": 0.3282442748091603,
+      "pr_auc": 0.7522147017306875,
+      "confusion_matrix": [
+        [
+          13086,
+          0
+        ],
+        [
+          1056,
+          258
+        ]
+      ],
+      "predicted_positive": 258
+    },
+    {
+      "model": "ridge_score_test",
+      "precision": 1.0,
+      "recall": 0.19233110164333536,
+      "f1": 0.3226135783563042,
+      "pr_auc": 0.7413812592909005,
+      "confusion_matrix": [
+        [
+          16357,
+          0
+        ],
+        [
+          1327,
+          316
+        ]
+      ],
+      "predicted_positive": 316
+    },
+    {
+      "model": "logreg_val",
+      "precision": 0.9387755102040817,
+      "recall": 0.700152207001522,
+      "f1": 0.8020924149956409,
+      "pr_auc": 0.9047756388725486,
+      "confusion_matrix": [
+        [
+          13026,
+          60
+        ],
+        [
+          394,
+          920
+        ]
+      ],
+      "predicted_positive": 980
+    },
+    {
+      "model": "logreg_test",
+      "precision": 0.9282178217821783,
+      "recall": 0.6847230675593426,
+      "f1": 0.7880910683012259,
+      "pr_auc": 0.8989238507693508,
+      "confusion_matrix": [
+        [
+          16270,
+          87
+        ],
+        [
+          518,
+          1125
+        ]
+      ],
+      "predicted_positive": 1212
+    }
+  ]
+}

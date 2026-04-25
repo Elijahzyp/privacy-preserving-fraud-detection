@@ -1,0 +1,20 @@
+{
+  "feature_columns": [
+    "amount_scaled",
+    "oldbalanceOrg_scaled",
+    "oldbalanceDest_scaled",
+    "deltaOrig_scaled",
+    "deltaDest_scaled",
+    "is_transfer"
+  ],
+  "numeric_base_features": [
+    "amount",
+    "oldbalanceOrg",
+    "oldbalanceDest",
+    "deltaOrig",
+    "deltaDest"
+  ],
+  "binary_features": [
+    "is_transfer"
+  ]
+}

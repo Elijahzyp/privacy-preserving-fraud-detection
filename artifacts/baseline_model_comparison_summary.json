@@ -1,0 +1,224 @@
+{
+  "base_feature_order": [
+    "amount_scaled",
+    "oldbalanceOrg_scaled",
+    "oldbalanceDest_scaled",
+    "deltaOrig_scaled",
+    "deltaDest_scaled",
+    "is_transfer"
+  ],
+  "poly2_expanded_feature_dimension": 27,
+  "models": [
+    {
+      "model_name": "ridge_score",
+      "feature_representation": "base_6d_scaled",
+      "score_type": "decision_function",
+      "he_ready": true,
+      "he_strategy": "encrypt base 6D scaled features and evaluate a weighted sum",
+      "coefficient_shape": [
+        6
+      ],
+      "intercept_shape": []
+    },
+    {
+      "model_name": "logistic_regression",
+      "feature_representation": "base_6d_scaled",
+      "score_type": "raw_logit",
+      "he_ready": true,
+      "he_strategy": "encrypt base 6D scaled features and evaluate a weighted sum",
+      "coefficient_shape": [
+        6
+      ],
+      "intercept_shape": []
+    },
+    {
+      "model_name": "linear_svc",
+      "feature_representation": "base_6d_scaled",
+      "score_type": "decision_function",
+      "he_ready": true,
+      "he_strategy": "encrypt base 6D scaled features and evaluate a weighted sum",
+      "coefficient_shape": [
+        6
+      ],
+      "intercept_shape": [
+        1
+      ]
+    },
+    {
+      "model_name": "poly2_logistic_regression",
+      "feature_representation": "poly2_expanded_from_base_6d",
+      "score_type": "raw_linear_score_on_poly2_features",
+      "he_ready": true,
+      "he_strategy": "pre-expand plaintext base 6D features with PolynomialFeatures, then encrypt the expanded vector",
+      "coefficient_shape": [
+        27
+      ],
+      "intercept_shape": [
+        1
+      ],
+      "base_feature_order": [
+        "amount_scaled",
+        "oldbalanceOrg_scaled",
+        "oldbalanceDest_scaled",
+        "deltaOrig_scaled",
+        "deltaDest_scaled",
+        "is_transfer"
+      ],
+      "expanded_feature_dimension": 27
+    }
+  ],
+  "metrics": [
+    {
+      "split": "validation",
+      "model": "ridge_score",
+      "precision": 1.0,
+      "recall": 0.1780821917808219,
+      "f1": 0.3023255813953488,
+      "pr_auc": 0.7479538904628229,
+      "confusion_matrix": [
+        [
+          13086,
+          0
+        ],
+        [
+          1080,
+          234
+        ]
+      ],
+      "predicted_positive": 234
+    },
+    {
+      "split": "test",
+      "model": "ridge_score",
+      "precision": 1.0,
+      "recall": 0.1862446743761412,
+      "f1": 0.31400718317085685,
+      "pr_auc": 0.7334967269731464,
+      "confusion_matrix": [
+        [
+          16357,
+          0
+        ],
+        [
+          1337,
+          306
+        ]
+      ],
+      "predicted_positive": 306
+    },
+    {
+      "split": "validation",
+      "model": "logistic_regression",
+      "precision": 0.9333333333333333,
+      "recall": 0.6818873668188736,
+      "f1": 0.7880386983289358,
+      "pr_auc": 0.8977456779246654,
+      "confusion_matrix": [
+        [
+          13022,
+          64
+        ],
+        [
+          418,
+          896
+        ]
+      ],
+      "predicted_positive": 960
+    },
+    {
+      "split": "test",
+      "model": "logistic_regression",
+      "precision": 0.9214402618657938,
+      "recall": 0.6853317102860621,
+      "f1": 0.7860383944153577,
+      "pr_auc": 0.8936063896267569,
+      "confusion_matrix": [
+        [
+          16261,
+          96
+        ],
+        [
+          517,
+          1126
+        ]
+      ],
+      "predicted_positive": 1222
+    },
+    {
+      "split": "validation",
+      "model": "linear_svc",
+      "precision": 0.9372862029646523,
+      "recall": 0.6255707762557078,
+      "f1": 0.7503423094477407,
+      "pr_auc": 0.8721137137951168,
+      "confusion_matrix": [
+        [
+          13031,
+          55
+        ],
+        [
+          492,
+          822
+        ]
+      ],
+      "predicted_positive": 877
+    },
+    {
+      "split": "test",
+      "model": "linear_svc",
+      "precision": 0.9217625899280576,
+      "recall": 0.6238587948874011,
+      "f1": 0.7441016333938294,
+      "pr_auc": 0.8669672002986035,
+      "confusion_matrix": [
+        [
+          16270,
+          87
+        ],
+        [
+          618,
+          1025
+        ]
+      ],
+      "predicted_positive": 1112
+    },
+    {
+      "split": "validation",
+      "model": "poly2_logistic_regression",
+      "precision": 0.9621072088724584,
+      "recall": 0.7922374429223744,
+      "f1": 0.8689482470784641,
+      "pr_auc": 0.9352996924084425,
+      "confusion_matrix": [
+        [
+          13045,
+          41
+        ],
+        [
+          273,
+          1041
+        ]
+      ],
+      "predicted_positive": 1082
+    },
+    {
+      "split": "test",
+      "model": "poly2_logistic_regression",
+      "precision": 0.9526276831976314,
+      "recall": 0.783323189287888,
+      "f1": 0.8597194388777555,
+      "pr_auc": 0.9336098422875196,
+      "confusion_matrix": [
+        [
+          16293,
+          64
+        ],
+        [
+          356,
+          1287
+        ]
+      ],
+      "predicted_positive": 1351
+    }
+  ]
+}

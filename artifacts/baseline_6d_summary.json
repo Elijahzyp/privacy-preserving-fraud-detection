@@ -1,0 +1,387 @@
+{
+  "feature_order": {
+    "feature_columns": [
+      "amount_scaled",
+      "oldbalanceOrg_scaled",
+      "oldbalanceDest_scaled",
+      "deltaOrig_scaled",
+      "deltaDest_scaled",
+      "is_transfer"
+    ],
+    "numeric_base_features": [
+      "amount",
+      "oldbalanceOrg",
+      "oldbalanceDest",
+      "deltaOrig",
+      "deltaDest"
+    ],
+    "binary_features": [
+      "is_transfer"
+    ]
+  },
+  "scaler": {
+    "mean": [
+      418105.9164538699,
+      188525.22294107435,
+      1567933.0915724507,
+      158081.69567484982,
+      384170.78224782116
+    ],
+    "scale": [
+      1134008.5591203335,
+      1146753.0936728446,
+      3973131.450426239,
+      832932.428349236,
+      1307249.9188572536
+    ]
+  },
+  "ridge_score": {
+    "weights": [
+      -0.0996934779057467,
+      -0.09144856568861803,
+      -0.023887467217951423,
+      0.42091732593965075,
+      0.005390675135041484,
+      0.275003672583245
+    ],
+    "bias": -0.8782400730281714
+  },
+  "logistic_regression": {
+    "weights": [
+      -8.146815122163325,
+      -2.2469529057241964,
+      -0.5783987159082675,
+      20.14105341054624,
+      -8.453095061813057,
+      1.7133052104116564
+    ],
+    "bias": -5.116505293138217,
+    "optimizer_success": true,
+    "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+  },
+  "linear_svc": {
+    "weights": [
+      -0.4636284554688795,
+      -0.05055137267800121,
+      -0.13840261862360165,
+      3.499566117477895,
+      -1.7168831698293523,
+      0.3918883882805183
+    ],
+    "bias": -0.9858497395877807,
+    "classes": [
+      0,
+      1
+    ]
+  },
+  "poly2_logistic_regression": {
+    "weights": [
+      -12.80650874754247,
+      -6.255727714752155,
+      -0.3615689718117271,
+      25.90891295452815,
+      -3.7251026814642576,
+      -2.450482106642697,
+      1.7880412710584774,
+      8.046007902891972,
+      -1.0321579702804247,
+      -3.073329745990949,
+      -1.078541529031903,
+      -3.8595208076838445,
+      0.8734628946791979,
+      1.2485943564686086,
+      -4.2210639858030685,
+      2.361249051421842,
+      0.10156156090153164,
+      0.0034981959283181766,
+      -0.29529316059858823,
+      0.29145995103292927,
+      -10.36258618313717,
+      -0.9770350792164499,
+      -1.1380251742152327,
+      1.7298423064910764,
+      0.19406205937290297,
+      -9.357976756369823,
+      -2.450482106642697
+    ],
+    "bias": -5.213612474526671,
+    "expanded_feature_dimension": 27,
+    "optimizer_iterations": [
+      430
+    ]
+  },
+  "poly2_features": {
+    "degree": 2,
+    "include_bias": false,
+    "expanded_feature_dimension": 27,
+    "base_feature_order": [
+      "amount_scaled",
+      "oldbalanceOrg_scaled",
+      "oldbalanceDest_scaled",
+      "deltaOrig_scaled",
+      "deltaDest_scaled",
+      "is_transfer"
+    ],
+    "feature_names": [
+      "amount_scaled",
+      "oldbalanceOrg_scaled",
+      "oldbalanceDest_scaled",
+      "deltaOrig_scaled",
+      "deltaDest_scaled",
+      "is_transfer",
+      "amount_scaled^2",
+      "amount_scaled oldbalanceOrg_scaled",
+      "amount_scaled oldbalanceDest_scaled",
+      "amount_scaled deltaOrig_scaled",
+      "amount_scaled deltaDest_scaled",
+      "amount_scaled is_transfer",
+      "oldbalanceOrg_scaled^2",
+      "oldbalanceOrg_scaled oldbalanceDest_scaled",
+      "oldbalanceOrg_scaled deltaOrig_scaled",
+      "oldbalanceOrg_scaled deltaDest_scaled",
+      "oldbalanceOrg_scaled is_transfer",
+      "oldbalanceDest_scaled^2",
+      "oldbalanceDest_scaled deltaOrig_scaled",
+      "oldbalanceDest_scaled deltaDest_scaled",
+      "oldbalanceDest_scaled is_transfer",
+      "deltaOrig_scaled^2",
+      "deltaOrig_scaled deltaDest_scaled",
+      "deltaOrig_scaled is_transfer",
+      "deltaDest_scaled^2",
+      "deltaDest_scaled is_transfer",
+      "is_transfer^2"
+    ],
+    "he_strategy": "pre-expanded plaintext features encrypted afterward"
+  },
+  "sample_summary": {
+    "rows": 89998,
+    "fraud": 8213,
+    "non_fraud": 81785
+  },
+  "split_summary": {
+    "train_rows": 57598,
+    "validation_rows": 14400,
+    "test_rows": 18000,
+    "train_fraud": 5256,
+    "validation_fraud": 1314,
+    "test_fraud": 1643
+  },
+  "model_metadata": [
+    {
+      "model_name": "ridge_score",
+      "feature_representation": "base_6d_scaled",
+      "score_type": "decision_function",
+      "he_ready": true,
+      "he_strategy": "encrypt base 6D scaled features and evaluate a weighted sum",
+      "coefficient_shape": [
+        6
+      ],
+      "intercept_shape": []
+    },
+    {
+      "model_name": "logistic_regression",
+      "feature_representation": "base_6d_scaled",
+      "score_type": "raw_logit",
+      "he_ready": true,
+      "he_strategy": "encrypt base 6D scaled features and evaluate a weighted sum",
+      "coefficient_shape": [
+        6
+      ],
+      "intercept_shape": []
+    },
+    {
+      "model_name": "linear_svc",
+      "feature_representation": "base_6d_scaled",
+      "score_type": "decision_function",
+      "he_ready": true,
+      "he_strategy": "encrypt base 6D scaled features and evaluate a weighted sum",
+      "coefficient_shape": [
+        6
+      ],
+      "intercept_shape": [
+        1
+      ]
+    },
+    {
+      "model_name": "poly2_logistic_regression",
+      "feature_representation": "poly2_expanded_from_base_6d",
+      "score_type": "raw_linear_score_on_poly2_features",
+      "he_ready": true,
+      "he_strategy": "pre-expand plaintext base 6D features with PolynomialFeatures, then encrypt the expanded vector",
+      "coefficient_shape": [
+        27
+      ],
+      "intercept_shape": [
+        1
+      ],
+      "base_feature_order": [
+        "amount_scaled",
+        "oldbalanceOrg_scaled",
+        "oldbalanceDest_scaled",
+        "deltaOrig_scaled",
+        "deltaDest_scaled",
+        "is_transfer"
+      ],
+      "expanded_feature_dimension": 27
+    }
+  ],
+  "metrics": [
+    {
+      "split": "validation",
+      "model": "ridge_score",
+      "precision": 1.0,
+      "recall": 0.1780821917808219,
+      "f1": 0.3023255813953488,
+      "pr_auc": 0.7479538904628229,
+      "confusion_matrix": [
+        [
+          13086,
+          0
+        ],
+        [
+          1080,
+          234
+        ]
+      ],
+      "predicted_positive": 234
+    },
+    {
+      "split": "test",
+      "model": "ridge_score",
+      "precision": 1.0,
+      "recall": 0.1862446743761412,
+      "f1": 0.31400718317085685,
+      "pr_auc": 0.7334967269731464,
+      "confusion_matrix": [
+        [
+          16357,
+          0
+        ],
+        [
+          1337,
+          306
+        ]
+      ],
+      "predicted_positive": 306
+    },
+    {
+      "split": "validation",
+      "model": "logistic_regression",
+      "precision": 0.9333333333333333,
+      "recall": 0.6818873668188736,
+      "f1": 0.7880386983289358,
+      "pr_auc": 0.8977456779246654,
+      "confusion_matrix": [
+        [
+          13022,
+          64
+        ],
+        [
+          418,
+          896
+        ]
+      ],
+      "predicted_positive": 960
+    },
+    {
+      "split": "test",
+      "model": "logistic_regression",
+      "precision": 0.9214402618657938,
+      "recall": 0.6853317102860621,
+      "f1": 0.7860383944153577,
+      "pr_auc": 0.8936063896267569,
+      "confusion_matrix": [
+        [
+          16261,
+          96
+        ],
+        [
+          517,
+          1126
+        ]
+      ],
+      "predicted_positive": 1222
+    },
+    {
+      "split": "validation",
+      "model": "linear_svc",
+      "precision": 0.9372862029646523,
+      "recall": 0.6255707762557078,
+      "f1": 0.7503423094477407,
+      "pr_auc": 0.8721137137951168,
+      "confusion_matrix": [
+        [
+          13031,
+          55
+        ],
+        [
+          492,
+          822
+        ]
+      ],
+      "predicted_positive": 877
+    },
+    {
+      "split": "test",
+      "model": "linear_svc",
+      "precision": 0.9217625899280576,
+      "recall": 0.6238587948874011,
+      "f1": 0.7441016333938294,
+      "pr_auc": 0.8669672002986035,
+      "confusion_matrix": [
+        [
+          16270,
+          87
+        ],
+        [
+          618,
+          1025
+        ]
+      ],
+      "predicted_positive": 1112
+    },
+    {
+      "split": "validation",
+      "model": "poly2_logistic_regression",
+      "precision": 0.9621072088724584,
+      "recall": 0.7922374429223744,
+      "f1": 0.8689482470784641,
+      "pr_auc": 0.9352996924084425,
+      "confusion_matrix": [
+        [
+          13045,
+          41
+        ],
+        [
+          273,
+          1041
+        ]
+      ],
+      "predicted_positive": 1082
+    },
+    {
+      "split": "test",
+      "model": "poly2_logistic_regression",
+      "precision": 0.9526276831976314,
+      "recall": 0.783323189287888,
+      "f1": 0.8597194388777555,
+      "pr_auc": 0.9336098422875196,
+      "confusion_matrix": [
+        [
+          16293,
+          64
+        ],
+        [
+          356,
+          1287
+        ]
+      ],
+      "predicted_positive": 1351
+    }
+  ],
+  "he_eval_subset": {
+    "rows": 128,
+    "fraud": 32,
+    "non_fraud": 96
+  }
+}

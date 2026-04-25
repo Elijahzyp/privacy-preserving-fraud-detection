@@ -1,0 +1,28 @@
+# Large dataset files (too large for GitHub — download from Kaggle)
+data/PS_20174392719_1491204439457_log.csv
+data/archive.zip
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Anaconda project internals
+anaconda_projects/
+
+# Claude Code internals
+.claude/
+
+# Virtual environments
+.venv/
+venv/
+env/
